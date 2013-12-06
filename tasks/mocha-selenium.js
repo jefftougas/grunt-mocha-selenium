@@ -19,6 +19,7 @@ module.exports = function(grunt) {
     // Retrieve options from the grunt task.
     var options = this.options({
       browserName: 'firefox',
+      version: null,
       usePromises: false,
       useSystemPhantom: false,
       useSauce: false,
@@ -97,7 +98,8 @@ module.exports = function(grunt) {
                     username: options.sauceUsername,
                     password: options.saucePassword,
                     extraOptions: {
-                        "tunnel-identifier": tunnelIdentifier
+                        "tunnel-identifier": tunnelIdentifier,
+                        version: options.version
                     }
                 });
 
